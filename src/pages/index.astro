@@ -1,24 +1,9 @@
 <!-- cd /Users/camilleconner/practice/ && npm start -->
 ---
-import yml from './data.yml';
 
 import '../styles/global.css';
 import '../styles/header_footer.css';
 import '../styles/homepage.css';
-
-// Font Awesome
-import { library, icon } from '@fortawesome/fontawesome-svg-core'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-
-// Declare all the icons you plan on using
-library.add(faMagnifyingGlass, faUser, faBars);
-
-// Instantiate the icon with the icon function
-const searchIcon = icon({ prefix: "fas", iconName: faMagnifyingGlass.iconName });
-const accountIcon = icon({ prefix: "fas", iconName: faUser.iconName });
-const menuIcon = icon({ prefix: "fas", iconName: faBars.iconName });
 
 const blogInfo = {
   blogTitle: "Simple Blog",
@@ -45,14 +30,13 @@ const pageTitle = blogInfo.blogTitle;
 			<nav class="navbar">
 			  <input type="checkbox" id="check">
 			  <label for="check" class="menu_toggle">
-				<Fragment set:html={menuIcon.html} />
 			  </label>
 				<ul class="menu">
 					<span class="mobile_only"><li class="menu_toggle_checked"></li></span>
 				  <li class="search_account">
 					  <input type="text" placeholder="Search...">
-					  <button name ="search-button" type="submit"><Fragment set:html={searchIcon.html} /></button>
-					  <button class="account" type="submit"><Fragment set:html={accountIcon.html} /></button>
+					  <button name ="search-button" type="submit"></button>
+					  <button class="account" type="submit"></button>
 				  </li>
                   <li class="mobile_border"><a href="/">Home</a>
 					<li class="mobile_border"><a href="/about">About</a>
