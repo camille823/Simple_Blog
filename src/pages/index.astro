@@ -10,7 +10,6 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
-
 // Declare all the icons you plan on using
 library.add(faMagnifyingGlass, faUser, faBars);
 
@@ -19,13 +18,12 @@ const searchIcon = icon({ prefix: "fas", iconName: faMagnifyingGlass.iconName })
 const accountIcon = icon({ prefix: "fas", iconName: faUser.iconName });
 const menuIcon = icon({ prefix: "fas", iconName: faBars.iconName });
 
-
-const pageTitle = "About Me";
-
 const blogInfo = {
   blogTitle: "Simple Blog",
   blogSubTitle: "My First Blog, Created with Figma, AstroBuild, and VSCode",
 };
+
+const pageTitle = blogInfo.blogTitle;
 
 ---
 <!doctype html>
@@ -52,7 +50,7 @@ const blogInfo = {
 				  <li class="search_account">
 					  <input type="text" placeholder="Search...">
 					  <button name ="search-button" type="submit"><Fragment set:html={searchIcon.html} /></button>
-					  <button class="account" type="submit"><Fragment set:html={menuIcon.html} /></button>
+					  <button class="account" type="submit"><Fragment set:html={accountIcon.html} /></button>
 				  </li>
                   <li class="mobile_border"><a href="/">Home</a>
 					<li class="mobile_border"><a href="/about">About</a>
