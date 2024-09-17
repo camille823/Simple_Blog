@@ -31,9 +31,14 @@ a, a:hover, a:visited, a:active {
 }
 
 /* font awesome */
-.fas {
-	color: black;
-}
+.svg-inline--fa {
+    overflow: visible;
+    box-sizing: content-box;
+    display: inline-block;
+    height: 1em;
+    vertical-align: -0.125em;
+    color:black;
+  }
 
 /* main section */
 /* Main */
