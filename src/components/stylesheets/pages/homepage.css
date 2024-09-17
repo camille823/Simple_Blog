@@ -1,0 +1,25 @@
+/* Featured Posts Container */
+
+div#blog_container {
+    padding:50px 40px 0 40px;
+}
+
+#blog_container > h2.Featured_Posts {
+    font-size: 30px;
+    font-weight:600 !important;
+}
+
+#blog_container > h3.Featured_Post_Title {
+    font-size:25px;
+}
+
+article#Blog_Post {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding:10px;
+    margin: 20px 0 20px -5px;
+}
+
+p.Featured_Post{
+    margin: 10px 0 10px 0;
+}
+
