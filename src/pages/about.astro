@@ -1,40 +1,32 @@
 <!-- cd /Users/camilleconner/practice/ && npm start -->
+---
+import '../styles/global.css';
+import '../styles/header_footer.css';
+import '../styles/homepage.css';
 
+
+
+const pageTitle = "About Me";
+
+const blogInfo = {
+  blogTitle: "Simple Blog",
+  blogSubTitle: "My First Blog, Created with Figma, AstroBuild, and VSCode",
+};
+
+---
 <!doctype html>
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Simple Blog | My First Blog, Created with Figma, AstroBuild, and VSCode</title>
-	<!-- stylesheets -->
-		<!-- directory -->
-		<link href="/src/components/stylesheets/style.css" rel="stylesheet" />
-
-		<!-- global, responsive  -->
-		<link href="/src/components/stylesheets/global.css" rel="stylesheet" />
-		<link href="/src/components/stylesheets/responsive.css" rel="stylesheet" />
-
-		<!-- header & footer-->
-		<link href="/src/components/stylesheets/header_footer.css" rel="stylesheet" />
-
-		<!-- homepage -->
-		<link href="/src/components/stylesheets/pages/homepage.css" rel="stylesheet" />
-
-		<!-- google font: Instrument Sans -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-
-		<!-- Font Awesome -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-
+    <title>{pageTitle} | {blogInfo.blogSubTitle}</title>
   </head>
   <body>
 	<container>
 		<header>
 			<section id="title">
-			  <h1 class="blog_title">Simple Blog</h1>
-			  <h2 class="blog_subtitle">My First Blog, Created with Figma, AstroBuild, and VSCode</h2>
+			  <h1 class="blog_title">{blogInfo.blogTitle} </h1>
+			  <h2 class="blog_subtitle">{blogInfo.blogSubTitle}</h2>
 			</section>
 			<nav class="navbar">
 			  <input type="checkbox" id="check">
@@ -55,7 +47,7 @@
 							<li><a href="#about">Dropdown</a></li>
 						</ul>
 					</li>
-					<li class="mobile_border"><a href="#blog">Blog</a></li>
+					<li class="mobile_border"><a href="/posts">Blog</a></li>
 					<li class="mobile_border"><a href="#tags">Tags</a></li>
 					<li class="mobile_border"><a href="#contact">Contact</a></li>
 					<span class="mobile_only"><li><a href="#contact">Login/Sign Up</a></li></span>

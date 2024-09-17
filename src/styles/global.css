@@ -1,0 +1,46 @@
+/* universal body */
+* {
+    margin:0;
+    padding:0;
+}
+
+container {
+    max-width:2000px;
+}
+
+body {
+    font-family: "Instrument Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    letter-spacing: var(--Label-Small-Tracking, 0.5px);
+}
+
+/* universal text decoration */
+
+/* Headers */
+h1, h2 ,h3 {
+    align-self: stretch;
+    font-weight:200;
+}
+
+/* links */
+a, a:hover, a:visited, a:active {
+    color: #5fa9d4;
+    text-decoration: none;
+}
+
+/* font awesome */
+.fas {
+	color: black;
+}
+
+/* main section */
+/* Main */
+
+section#main {
+    display:block;
+    width: 95%;
+    margin:0 auto 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
