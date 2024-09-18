@@ -30,15 +30,6 @@ a, a:hover, a:visited, a:active {
     text-decoration: none;
 }
 
-/* font awesome */
-.svg-inline--fa {
-    overflow: visible;
-    box-sizing: content-box;
-    display: inline-block;
-    height: 1em;
-    vertical-align: -0.125em;
-    color:black;
-  }
 
 /* main section */
 /* Main */

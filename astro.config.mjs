@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
 
-import yaml from '@rollup/plugin-yaml';
+import icon from 'astro-icon';
 
-// https://astro.build/config
+import { defineConfig } from "astro/config";
+ import icon from "astro-icon";
+
 export default defineConfig({
-  vite: {
-    plugins: [yaml()]
-  }
+  integrations: [icon()],
 });
