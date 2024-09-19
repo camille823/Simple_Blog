@@ -1,19 +1,33 @@
 ---
+import { createExcerpt } from '../components/scripts/create-excerpt.js';
+
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-import FeaturedPost from '../components/featured_post.astro';
-
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("posts");
 
 const pageTitle = "Home Page";
 const { blogTitle } = Astro.props;
 const { blogSubtitle } = Astro.props;
 
 ---
-<BaseLayout pageTitle={pageTitle} | {blogTitle} | {blogSubtitle} >
+<BaseLayout pageTitle={pageTitle}>
 	<section id="mainpage">
 		<div id="Feature_Container">
-			<h2 class="Page_Title">Featured Posts</h2>
-			<FeaturedPost />
+			{
+				allPosts.map((post) => {
+				const excerpt = `${createExcerpt(post.body).substring(0, 500)}...`;
+				return (
+					<a href={post.slug}>
+						<article id="Featured_Post">
+							<h3 class="Featured_Post_Title"><a href='/posts/${post.slug}/'>{post.data.title}</a></h3>
+							<p class="Featured Post">{excerpt}</p>
+						</article>
+					</a>
+				);
+				})
+			}
+
 		</div>
 	</section>
 </BaseLayout>

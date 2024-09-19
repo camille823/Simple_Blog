@@ -1,37 +1,39 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-const allPosts = await Astro.glob('./posts/*.md');
+
+import { createExcerpt } from '../components/scripts/create-excerpt.js';
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("posts");
+const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+
 const pageTitle = "Blog Posts";
 const { blogSubtitle } = Astro.props;
 
-
 ---
-
-<!--   <section id="allposts">
-        <div id="Title_Container">
-            <h2 class="Page_Title">{pageTitle}</h2>   
-        </div>
-        {allPosts.map(post => 
-        <article id="All_Posts">
-            <h3 class="Featured_Post_Title"><a href={post.url}>{post.frontmatter.title}</a></h3>
-             {post.frontmatter.description}
-        </article>
-        )}
-    </section>
--->
-
-
-    <BaseLayout pageTitle={pageTitle} | {blogSubtitle} >
+<BaseLayout pageTitle={pageTitle}>
         <section id="mainpage">
             <div id="Feature_Container">
-                <h2 class="Page_Title">{pageTitle}</h2>
-                {allPosts.map(post => 
-                    <article id="Featured_Post">
-                    <h3 class="Featured_Post_Title"><a href={post.url}>{post.frontmatter.title}</a></h3> 
-                    <p class="Featured_Post">
-                        {post.frontmatter.description}
-                    </p>
-                </article>)}
+                {
+                    allPosts.map((post) => {
+                    const excerpt = `${createExcerpt(post.body).substring(0, 2000)}...`;
+                    return (
+                        <a href={post.slug}>
+                            <article id="Featured_Post">
+                                <p><h3 class="Featured_Post_Title"><a href=`/posts/${post.slug}/`>{post.data.title}</a></h3></p>
+                                <p>{post.data.author}, {post.data.pubDate.toString().slice(0,10)}</p>
+                                <p class="Featured Post">{excerpt}</p>
+                                <p>Tags: {tags.map((tag) =><a href={`/tags/${tag}`}>{tag} &nbsp;</a>)}</p>
+
+                            </article>
+                            
+                        </a>
+                    );
+                    })
+                }
+
             </div>
         </section>
-  </BaseLayout>
+    </BaseLayout>
+
+
