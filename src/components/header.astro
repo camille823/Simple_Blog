@@ -3,26 +3,12 @@
 import '../styles/global.css';
 import '../styles/header_footer.css';
 
-import Mobile from '../mobile.astro';
-
 
 import { Icon } from 'astro-icon/components'
 
 
-const blogInfo = {
-  blogTitle: "Simple Blog",
-  blogSubTitle: "My First Blog, Created with Figma, AstroBuild, and VSCode",
-};
-
-const pageTitle = blogInfo.blogTitle;
-
 ---
 
-<header>
-    <section id="title">
-        <h1 class="blog_title">{blogInfo.blogTitle} </h1>
-        <h2 class="blog_subtitle">{blogInfo.blogSubTitle}</h2>
-    </section>
     <nav class="navbar">
         <input type="checkbox" id="check">
         <label for="check" class="menu_toggle">
@@ -48,4 +34,3 @@ const pageTitle = blogInfo.blogTitle;
             <span class="mobile_only"><li><a href="#contact">Login/Sign Up</a></li></span>
         </ul>
     </nav>
-    </header>

@@ -24,6 +24,18 @@ h1, h2 ,h3 {
     font-weight:200;
 }
 
+h1 {
+    font-size:50px;
+}
+
+h2 {
+    font-size:30px;
+}
+
+h3 {
+    font-size:25px;
+}
+
 /* links */
 a, a:hover, a:visited, a:active {
     color: #5fa9d4;
@@ -39,4 +51,39 @@ section#main {
     width: 95%;
     margin:0 auto 0 auto;
     border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+
+/* Featured Posts Container */
+
+div#blog_container {
+    padding:50px 40px 0 40px;
+}
+
+#blog_container > h2.Page_Title {
+    font-size: 30px;
+    font-weight:600 !important;
+}
+
+#blog_container > h3.Featured_Post_Title {
+    font-size:25px;
+}
+
+article#Blog_Post {
+    padding:10px;
+    margin: 20px 0 20px; 
+}
+
+article#Featured_Post {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding:10px;
+    margin: 20px 0 20px -5px;
+}
+
+p.Featured_Post{
+    margin: 10px 0 10px 0;
+}
+
+div#Title_Container {
+    margin-bottom:20px;
 }

@@ -1,0 +1,19 @@
+---
+const { frontmatter } = Astro.props;
+import BaseLayout from './BaseLayout.astro';
+
+const { blogSubtitle } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title} >
+    <div id="Title_Container">
+        <h2 class="Page_Title">{frontmatter.title}</h2>
+        <h3>Written by {frontmatter.author}</h3>
+        <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
+        <p>{frontmatter.description}</p>    
+    </div>
+    <article id="Blog_Post">
+              <slot />
+    <p>Tags: {frontmatter.tags.join(', ')}</p>
+</article>
+</BaseLayout>
