@@ -1,5 +1,7 @@
 import rss, { pagesGlobToRssItems } from '@astrojs/rss';
 
+import frontmatter from './MarkdownPostLayout.astro';
+
 export async function GET(context) {
   return rss({
     title: frontmatter.title,
