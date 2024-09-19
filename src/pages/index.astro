@@ -1,12 +1,10 @@
-<!-- cd /Users/camilleconner/practice/ && npm start -->
 ---
 
 import '../styles/global.css';
-import '../styles/header_footer.css';
 import '../styles/homepage.css';
 
-import { Icon } from 'astro-icon/components'
-
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
 
 const blogInfo = {
   blogTitle: "Simple Blog",
@@ -25,37 +23,7 @@ const pageTitle = blogInfo.blogTitle;
   </head>
   <body>
 	<container>
-		<header>
-			<section id="title">
-			  <h1 class="blog_title">{blogInfo.blogTitle} </h1>
-			  <h2 class="blog_subtitle">{blogInfo.blogSubTitle}</h2>
-			</section>
-			<nav class="navbar">
-			  <input type="checkbox" id="check">
-			  <label for="check" class="menu_toggle">
-				<Icon name="mdi:menu" />
-			  </label>
-				<ul class="menu">
-					<span class="mobile_only"><li class="menu_toggle_checked"></li></span>
-				  <li class="search_account">
-					  <input type="text" placeholder="Search...">
-					  <button name ="search-button" type="submit"><Icon name="mdi:search" /></button>
-					  <button class="account" type="submit"><Icon name="mdi:account" /></button>
-				  </li>
-                  <li class="mobile_border"><a href="/">Home</a>
-					<li class="mobile_border"><a href="/about">About</a>
-						<ul class="dropdown">
-							<li><a href="#about">Dropdown</a></li>
-							<li><a href="#about">Dropdown</a></li>
-						</ul>
-					</li>
-					<li class="mobile_border"><a href="/posts">Blog</a></li>
-					<li class="mobile_border"><a href="#tags">Tags</a></li>
-					<li class="mobile_border"><a href="#contact">Contact</a></li>
-					<span class="mobile_only"><li><a href="#contact">Login/Sign Up</a></li></span>
-				</ul>
-			</nav>
-		  </header>
+		<Header />
 		<section id="main">
 			<div id="blog_container">
 				<h2 class="Featured_Posts">Featured Posts</h2>
@@ -82,9 +50,7 @@ const pageTitle = blogInfo.blogTitle;
 				</article>
 			</div>
 		</section>
-		<section id="footer">
-			<div class="copyright">2024 Camille Conner. All Rights Reserved</div>
-		</section>
+	<Footer />
 	</container>
   </body>
 </html>

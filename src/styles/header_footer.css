@@ -93,6 +93,7 @@ nav ul li ul {
 
 .search_account {
     float:right;
+    margin: -3px;
 }
 
 .search_account input[type="text"] {
@@ -104,8 +105,6 @@ nav ul li ul {
 
 .search_account button {
 	margin-left: 5px;
-    margin-top: auto;
-    margin-bottom: auto;
 	border: none;
 	background-color: #fff;
 	cursor: pointer;
@@ -155,19 +154,6 @@ button.account  {
 /* Sets certain elements to only be shown in mobile menu */
 .mobile_only li {
 	display: none;
-}
-  
-/* Footer */
-section#footer {
-    display:block;
-    max-width:1440px;
-    width: 95%;
-    margin:10px auto 10px auto;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-div.copyright {
-    padding: 3px 10px 3px 10px;
 }
 
 /* Small Browser View - 1200 or Smaller */
