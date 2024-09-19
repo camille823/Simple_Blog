@@ -3,9 +3,11 @@ const { frontmatter } = Astro.props;
 import BaseLayout from './BaseLayout.astro';
 
 const { blogSubtitle } = Astro.props;
+
 ---
 
 <BaseLayout pageTitle={frontmatter.title} >
+<section id="blogpage">
     <div id="Title_Container">
         <h2 class="Page_Title">{frontmatter.title}</h2>
         <h3>Written by {frontmatter.author}</h3>
@@ -13,7 +15,12 @@ const { blogSubtitle } = Astro.props;
         <p>{frontmatter.description}</p>    
     </div>
     <article id="Blog_Post">
-              <slot />
-    <p>Tags: {frontmatter.tags.join(', ')}</p>
-</article>
+        <slot />
+    </article>
+    <div class="tags">Tags: 
+        {frontmatter.tags.map((tag) => (
+          <span class="tag"><a href={`/tags/${tag}`}>{tag} &nbsp;</a></span>
+        ))}
+      </div>
+</section>
 </BaseLayout>

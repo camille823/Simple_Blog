@@ -1,35 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+import FeaturedPost from '../components/featured_post.astro';
+
+
 const pageTitle = "Home Page";
 const { blogTitle } = Astro.props;
 const { blogSubtitle } = Astro.props;
 
 ---
 <BaseLayout pageTitle={pageTitle} | {blogTitle} | {blogSubtitle} >
-
+	<section id="mainpage">
+		<div id="Feature_Container">
 			<h2 class="Page_Title">Featured Posts</h2>
-			<article id="Blog_Post">
-				<h3 class="Featured_Post_Title"><a href="src/pages/mobile.astro">Blog Post</a></h3>
-				<p class="Featured_Post">
-					Lorem ipsum dolor sit amet consectetur. Erat consectetur blandit porttitor nisl ipsum. Sagittis bibendum convallis sed risus nec nec habitant enim proin. A et quis ac eleifend. Sit commodo lacus tincidunt senectus. Viverra venenatis bibendum in sapien tristique gravida. Cursus adipiscing ultricies sit ac posuere pulvinar malesuada morbi. Ac turpis etiam purus bibendum enim. Orci cras nulla proin sagittis enim nulla. Quis lectus arcu commodo odio. Lacus hendrerit habitasse fermentum quisque ut massa. Nunc cursus proin vitae lectus semper cursus. Aliquet elit netus ultrices egestas purus viverra at sed vitae. Sit nisl enim pellentesque semper. Aliquam nulla a id sem sed.
-					Amet velit egestas dictumst diam. Risus erat elit ut placerat nisi eget at nibh turpis. Nibh donec a sollicitudin sed diam. Amet donec amet dolor ut tincidunt dictum lectus consectetur. Fringilla integer proin ut hac non consectetur sed. Et etiam tristique elit aliquet ut arcu ante aliquet. Erat justo at ac tristique nisl egestas. Nisi adipiscing ultrices imperdiet vulputate velit sed volutpat leo neque. Magna lobortis neque metus et ac eget magnis tortor. Turpis nunc nec vivamus in donec. Et dictumst sagittis vestibulum integer venenatis sed pretium.
-				</p>
-			</article>
-			<article id="Blog_Post">
-				<h3 class="Featured_Post_Title">Blog Post</h3>
-				<p class="Featured_Post">
-					Lorem ipsum dolor sit amet consectetur. Erat consectetur blandit porttitor nisl ipsum. Sagittis bibendum convallis sed risus nec nec habitant enim proin. A et quis ac eleifend. Sit commodo lacus tincidunt senectus. Viverra venenatis bibendum in sapien tristique gravida. Cursus adipiscing ultricies sit ac posuere pulvinar malesuada morbi. Ac turpis etiam purus bibendum enim. Orci cras nulla proin sagittis enim nulla. Quis lectus arcu commodo odio. Lacus hendrerit habitasse fermentum quisque ut massa. Nunc cursus proin vitae lectus semper cursus. Aliquet elit netus ultrices egestas purus viverra at sed vitae. Sit nisl enim pellentesque semper. Aliquam nulla a id sem sed.
-					Amet velit egestas dictumst diam. Risus erat elit ut placerat nisi eget at nibh turpis. Nibh donec a sollicitudin sed diam. Amet donec amet dolor ut tincidunt dictum lectus consectetur. Fringilla integer proin ut hac non consectetur sed. Et etiam tristique elit aliquet ut arcu ante aliquet. Erat justo at ac tristique nisl egestas. Nisi adipiscing ultrices imperdiet vulputate velit sed volutpat leo neque. Magna lobortis neque metus et ac eget magnis tortor. Turpis nunc nec vivamus in donec. Et dictumst sagittis vestibulum integer venenatis sed pretium.
-				</p>
-			</article>
-			<article id="Blog_Post">
-				<h3 class="Featured_Post_Title">Blog Post</h3>
-				<p class="Featured_Post">
-					Lorem ipsum dolor sit amet consectetur. Erat consectetur blandit porttitor nisl ipsum. Sagittis bibendum convallis sed risus nec nec habitant enim proin. A et quis ac eleifend. Sit commodo lacus tincidunt senectus. Viverra venenatis bibendum in sapien tristique gravida. Cursus adipiscing ultricies sit ac posuere pulvinar malesuada morbi. Ac turpis etiam purus bibendum enim. Orci cras nulla proin sagittis enim nulla. Quis lectus arcu commodo odio. Lacus hendrerit habitasse fermentum quisque ut massa. Nunc cursus proin vitae lectus semper cursus. Aliquet elit netus ultrices egestas purus viverra at sed vitae. Sit nisl enim pellentesque semper. Aliquam nulla a id sem sed.
-					Amet velit egestas dictumst diam. Risus erat elit ut placerat nisi eget at nibh turpis. Nibh donec a sollicitudin sed diam. Amet donec amet dolor ut tincidunt dictum lectus consectetur. Fringilla integer proin ut hac non consectetur sed. Et etiam tristique elit aliquet ut arcu ante aliquet. Erat justo at ac tristique nisl egestas. Nisi adipiscing ultrices imperdiet vulputate velit sed volutpat leo neque. Magna lobortis neque metus et ac eget magnis tortor. Turpis nunc nec vivamus in donec. Et dictumst sagittis vestibulum integer venenatis sed pretium.
-				</p>
-			</article>
-
-
+			<FeaturedPost />
+		</div>
+	</section>
 </BaseLayout>

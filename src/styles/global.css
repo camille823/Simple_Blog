@@ -46,32 +46,41 @@ a, a:hover, a:visited, a:active {
 /* main section */
 /* Main */
 
-section#main {
+section#mainpage {
     display:block;
     width: 95%;
     margin:0 auto 0 auto;
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-
-/* Featured Posts Container */
-
-div#blog_container {
+section#blogpage {
+    display:block;
+    margin:0 auto 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    width:80%;
     padding:50px 40px 0 40px;
 }
 
-#blog_container > h2.Page_Title {
+section#allposts {
+    display:block;
+    margin:0 auto 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    width:80%;
+    padding:50px 40px 0 40px;
+}
+/* Featured Posts Container */
+
+div#Feature_Container {
+    padding:50px 40px 0 40px;
+}
+
+h2.Page_Title {
     font-size: 30px;
     font-weight:600 !important;
 }
 
-#blog_container > h3.Featured_Post_Title {
+#Feature_Container > h3.Featured_Post_Title {
     font-size:25px;
-}
-
-article#Blog_Post {
-    padding:10px;
-    margin: 20px 0 20px; 
 }
 
 article#Featured_Post {
@@ -85,5 +94,19 @@ p.Featured_Post{
 }
 
 div#Title_Container {
+    margin-bottom:20px;
+}
+
+article#Blog_Post {
+    padding:10px;
+    margin: 20px 0 20px; 
+}
+
+article#All_Posts {
+    padding:30px;
+    margin: 20px 0 20px; 
+}
+
+.tags {
     margin-bottom:20px;
 }
