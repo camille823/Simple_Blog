@@ -10,6 +10,6 @@ import { defineConfig } from "astro/config";
  
 export default defineConfig({
   integrations: [icon(),vue()],
-  site: "https://example.com"
+  site: "https://extraordinary-unicorn-841d05.netlify.app"
 
 });
