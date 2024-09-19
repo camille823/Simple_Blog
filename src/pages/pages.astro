@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+const allPosts = await Astro.glob('./posts/*.md');
+const pageTitle = "Blog Posts";
+const { blogSubtitle } = Astro.props;
+
+
+---
+
+<!--   <section id="allposts">
+        <div id="Title_Container">
+            <h2 class="Page_Title">{pageTitle}</h2>   
+        </div>
+        {allPosts.map(post => 
+        <article id="All_Posts">
+            <h3 class="Featured_Post_Title"><a href={post.url}>{post.frontmatter.title}</a></h3>
+             {post.frontmatter.description}
+        </article>
+        )}
+    </section>
+-->
+
+
+    <BaseLayout pageTitle={pageTitle} | {blogSubtitle} >
+        <section id="mainpage">
+            <div id="Feature_Container">
+                <h2 class="Page_Title">{pageTitle}</h2>
+                {allPosts.map(post => 
+                    <article id="Featured_Post">
+                    <h3 class="Featured_Post_Title"><a href={post.url}>{post.frontmatter.title}</a></h3> 
+                    <p class="Featured_Post">
+                        {post.frontmatter.description}
+                    </p>
+                </article>)}
+            </div>
+        </section>
+  </BaseLayout>
