@@ -37,7 +37,8 @@
 					<a href={post.slug}>
 						<article id="Featured_Post">
 							<h3 class="Featured_Post_Title"><a href=`/posts/${post.slug}/`>{post.data.title}</a></h3>
-							<p class="Featured Post">{excerpt}</p>
+							<p class="Featured Post">  <StoryblokComponent blok={story.content} />
+</p>
 						</article>
 					</a>
 				);
@@ -47,4 +48,3 @@
 		</div>
 	</section>
 </BaseLayout>
-<StoryblokComponent blok="{story.content}" />
