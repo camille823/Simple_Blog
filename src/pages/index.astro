@@ -1,14 +1,30 @@
 ---
-import { createExcerpt } from '../components/scripts/create-excerpt.js';
 
-import BaseLayout from '../layouts/BaseLayout.astro';
+//imports
+	//base layout
+	import BaseLayout from '../layouts/BaseLayout.astro';
 
-import { getCollection } from "astro:content";
-const allPosts = await getCollection("posts");
+	//blog posts
+	import { getCollection } from "astro:content";
+	const allPosts = await getCollection("posts");
+	
+	// blog post excerpts
+	import { createExcerpt } from '../components/scripts/create-excerpt.js';
 
-const pageTitle = "Home Page";
-const { blogTitle } = Astro.props;
-const { blogSubtitle } = Astro.props;
+	// storyblok api
+	import { useStoryblokApi } from "@storyblok/astro";
+	import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
+		const storyblokApi = useStoryblokApi();
+		const { data } = await storyblokApi.get("cdn/stories/home", {
+		version: "draft",
+		});
+		
+		const story = data.story;
+
+// page & blog title
+	const pageTitle = "Home Page";
+	const { blogTitle } = Astro.props;
+	const { blogSubtitle } = Astro.props;
 
 ---
 <BaseLayout pageTitle={pageTitle}>
@@ -31,3 +47,4 @@ const { blogSubtitle } = Astro.props;
 		</div>
 	</section>
 </BaseLayout>
+<StoryblokComponent blok="{story.content}" />

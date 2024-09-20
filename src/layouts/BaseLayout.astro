@@ -1,15 +1,21 @@
 ---
+//imports
+  //global stylesheet
+  import '../styles/global.css';
 
-import '../styles/global.css';
+//navigation
+  import Header from '../components/nav.astro';
 
-import Header from '../components/nav.astro';
-import Footer from '../components/footer.astro';
+//footer
+  import Footer from '../components/footer.astro';
 
-const { pageTitle } = Astro.props;
+//page info
+  //page title => passed to props
+  const { pageTitle } = Astro.props;
 
-const blogTitle = "Simple Blog";
-
-const blogSubtitle = "My First Blog, Created with Figma, AstroBuild, and VSCode";
+  // blog title & subtitle => declared here
+  const blogTitle = "Simple Blog";
+  const blogSubtitle = "My First Blog, Created with Figma, AstroBuild, and VSCode";
 
 ---
 <!doctype html>
