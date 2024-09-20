@@ -1,14 +1,15 @@
 import { defineConfig } from 'astro/config';
 
+import mdx from '@astrojs/mdx';
 import icon from 'astro-icon';
+import vue from '@astrojs/vue';
+import react from '@astrojs/react';
 
-import { defineConfig } from "astro/config";
- import icon from "astro-icon";
+import pagefind from "astro-pagefind";
 
- import { defineConfig } from 'astro/config';
- import vue from '@astrojs/vue';
- 
+
 export default defineConfig({
-  integrations: [icon(),vue()],
+  integrations: [icon(), vue(), mdx(), react(),pagefind()],
+
   site: "https://extraordinary-unicorn-841d05.netlify.app"
 });
