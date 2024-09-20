@@ -11,14 +11,6 @@
 	// blog post excerpts
 	import { createExcerpt } from '../components/scripts/create-excerpt.js';
 
-	// import Strapi cms
-	import fetchApi from '../lib/strapi';
-	import type Article from '../interfaces/article';
-	const articles = await fetchApi<Article[]>({
-	endpoint: 'articles', // the content type to fetch
-	wrappedByKey: 'data', // the key to unwrap the response
-	});
-
 // page & blog title
 	const pageTitle = "Home Page";
 	const { blogTitle } = Astro.props;
@@ -28,7 +20,7 @@
 <BaseLayout pageTitle={pageTitle}>
 	<section id="mainpage">
 		<div id="Feature_Container">
-		<!--	{
+		{
 				allPosts.map((post) => {
 				const excerpt = `${createExcerpt(post.body).substring(0, 500)}...`;
 				return (
@@ -40,19 +32,9 @@
 					</a>
 				);
 				})
-		} -->
 
-		<ul>
-			{
-			  articles.map((article) => (
-				<li>
-				  <a href={`/blog/${article.attributes.slug}/`}>
-					{article.attributes.title}
-				  </a>
-				</li>
-			  ))
-			}
-		  </ul>
+
+		
 
 		</div>
 	</section>

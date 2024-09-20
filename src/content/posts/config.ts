@@ -1,17 +1,17 @@
 
 // 1. Import utilities from `astro:content`
-import { z, defineCollection } from 'astro:content';
+import { z as zod, defineCollection } from "astro:content";
 
 // 2. Define a `type` and `schema` for each collection
 const postCollection = defineCollection({
   type: 'content', // v2.5.0 and later
-  schema: z.object({
-    title: z.string(),
-    pubDate: z.date(),
-    description: z.string(),
-    author: z.string(),
-    tags: z.array(z.string()),
-    image: z.string().optional(),
+  schema: zod.object({
+    title: zod.string(),
+    pubDate: zod.date(),
+    description: zod.string(),
+    author: zod.string(),
+    tags: zod.array(zod.string()),
+    image: zod.string().optional(),
   }),
 });
 

@@ -1,1 +1,3 @@
 cd /Users/camilleconner/practice/ && npm start
+
+cd my-strapi-project && npm run develop

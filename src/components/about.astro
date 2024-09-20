@@ -1,0 +1,13 @@
+---
+//imports
+    //importing <Image /> asset from astro
+    import { Image } from "astro:assets";
+
+//calling from strapi dynamic page
+const { aboutText, aboutPhotoURL } = Astro.props;
+const photoURL = `${import.meta.env.STRAPI_URL}${aboutPhotoURL}`;
+
+---
+
+<h1>{aboutText}</h1>
+<Image src=${photourl} alt="me" width="400" height="400"/>
